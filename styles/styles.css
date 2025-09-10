@@ -20,6 +20,7 @@ body {
 }
 
 
+
 .hero {
   height: 100vh;
  padding: 0 1rem;
@@ -30,6 +31,17 @@ body {
   /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
               url('') no-repeat center center/cover; */
   color: white;
+  @media screen and (max-width: 1000px) {
+    .hero {
+      flex-direction: column;
+      height: auto;
+     padding: 2rem 1rem;
+    }
+    .hero h1, .hero-content h1 {
+      font-size: 2.2rem;
+      white-space: normal;
+    }
+  }
 }
 .hero h1 {
   font-size: 3rem;
@@ -59,10 +71,12 @@ body {
 }
 
 
+
 .squad {
   padding: 50px 20px;
   text-align: center;
 }
+
 .squad-members {
   display: flex;
   justify-content: center;
@@ -74,21 +88,30 @@ body {
   background: var(--off-black);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px var(--yellow);
+  box-shadow: 4px 4px 6px var(--yellow);
+  margin-top: 25px;
   width: 200px;
-  height: 200px;
+  height: 250px;
 }
 .member.active {
   background: var(--dark-grey);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 6px var(--yellow);
+  margin-top: 0px;
+  padding-top: 50px;
   width: 250px;
-  height: 200px;
+  height: 300px;
 }
 .member img {
-  width: 100%;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
   border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 .member h3 {
   margin: 15px 0 10px;
@@ -106,7 +129,30 @@ body {
   background: #333;
   color: white;
 }
-
+@media screen and (max-width: 780px) {
+  .member {
+    width: 90vw;
+    max-width: 350px;
+    height: auto;
+    margin-top: 20px;
+  }
+  .squad-members {
+    flex-direction: column;
+    align-items: center;
+  }
+  .member.active {
+    width: 90vw;
+    max-width: 400px;
+    height: auto;
+    margin-top: 20px;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 10px auto 0 auto;
+    text-align: center;
+  }
+}
 
 
 .favorites {
