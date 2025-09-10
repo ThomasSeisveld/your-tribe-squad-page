@@ -5,7 +5,7 @@
 }
 
 :root {
-  --yellow: hsl(51, 100%, 50%);
+  --yellow: hsl(293, 100%, 32%);
   --white: hsl(0, 0%, 100%);
   --grey: hsl(0, 0%, 20%);
   --dark-grey: hsl(0, 0%, 12%);
@@ -22,7 +22,7 @@ body {
 
 .hero {
   height: 100vh;
- padding: 0 1rem;
+  padding: 0 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,8 +98,6 @@ body {
   color: white;
 }
 
-
-
 .favorites {
   padding: 50px 20px;
   text-align: center;
@@ -124,3 +122,5 @@ body {
   margin-top: 10px;
   font-weight: bold;
 }
+
+
