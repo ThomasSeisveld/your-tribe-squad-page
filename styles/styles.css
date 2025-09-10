@@ -5,9 +5,9 @@
 }
 
 :root {
-  --yellow: hsl(51, 100%, 50%);
+  --yellow: hsl(301, 100%, 35%);
   --white: hsl(0, 0%, 100%);
-  --grey: hsl(0, 0%, 20%);
+  --grey: hsl(301, 100%, 35%);
   --dark-grey: hsl(0, 0%, 12%);
   --off-black: hsl(0, 0%, 8%);
 }
