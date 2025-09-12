@@ -5,7 +5,7 @@
 }
 
 :root {
-  --yellow: hsl(301, 100%, 35%);
+  --purple: hsl(301, 100%, 35%);
   --white: hsl(0, 0%, 100%);
   --grey: hsl(301, 100%, 35%);
   --dark-grey: hsl(0, 0%, 12%);
@@ -20,16 +20,14 @@ body {
 }
 
 
-
 .hero {
   height: 100vh;
- padding: 0 1rem;
+  padding: 0 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('') no-repeat center center/cover; */
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('') no-repeat center center/cover;
   color: white;
   @media screen and (max-width: 1000px) {
     .hero {
@@ -43,34 +41,38 @@ body {
     }
   }
 }
+
 .hero h1 {
+  font-style: italic;
   font-size: 3rem;
 }
+
 .hero span {
-  color: var(--yellow); 
+  color: var(--purple); 
 }
+
 .hero-content h1 {
   overflow: hidden;
   max-width: fit-content;
-  border-right: .15em solid var(--yellow);
+  border-right: .15em solid var(--purple);
   white-space: nowrap; 
   margin: 0 auto; 
   padding: 0 auto;
   letter-spacing: .10em;
   animation: 
-    typing 3.5s steps(40, end),
+    typing 2s steps(40, end),
     blink-caret .75s step-end infinite;
 }
+
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
 }
+
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: var(--yellow) }
+  50% { border-color: var(--purple) }
 }
-
-
 
 .squad {
   padding: 50px 20px;
@@ -88,21 +90,52 @@ body {
   background: var(--off-black);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 4px 4px 6px var(--yellow);
+  box-shadow: 4px 4px 6px var(--purple);
   margin-top: 25px;
   width: 200px;
   height: 250px;
-}
-.member.active {
-  background: var(--dark-grey);
+
+  flex: 0 0 250px;           /* vaste breedte per kaart */
+  scroll-snap-align: center; /* kaart centreert in slider */
+  background: var(--off-black);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px var(--yellow);
-  margin-top: 0px;
-  padding-top: 50px;
-  width: 250px;
-  height: 300px;
+  box-shadow: 4px 4px 6px var(--purple);
+  text-align: center;
 }
+
+.squad-slider {
+  width: 100%;
+  overflow-x: auto;          /* horizontaal scrollen */
+  scroll-snap-type: x mandatory; /* "plakt" netjes per kaart */
+  display: flex;
+}
+
+.squad-track {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.squad-slider::-webkit-scrollbar {
+  height: 8px; /* hoogte van scrollbar */
+}
+
+.squad-slider::-webkit-scrollbar-track {
+  background: var(--off-black); /* achtergrond */
+  border-radius: 10px;
+}
+
+.squad-slider::-webkit-scrollbar-thumb {
+  background: var(--purple); /* schuifbalk */
+  border-radius: 10px;
+}
+
+.squad-slider::-webkit-scrollbar-thumb:hover {
+  background: hsl(301, 100%, 45%); /* iets lichter bij hover */
+}
+
 .member img {
   display: block;
   max-width: 100%;
@@ -129,6 +162,7 @@ body {
   background: #333;
   color: white;
 }
+
 @media screen and (max-width: 780px) {
   .member {
     width: 90vw;
@@ -154,12 +188,12 @@ body {
   }
 }
 
-
 .favorites {
   padding: 50px 20px;
   text-align: center;
   background: var(--off-black);
 }
+
 .locations {
   display: flex;
   justify-content: center;
@@ -167,15 +201,17 @@ body {
   flex-wrap: wrap;
   margin-top: 20px;
 }
+
 .location {
   width: 200px;
 }
+
 .location img {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 6px var(--off-black);
-  
 }
+
 .location p {
   margin-top: 10px;
   font-weight: bold;
