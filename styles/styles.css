@@ -15,10 +15,10 @@
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--off-black);
-  padding: 4rem 1rem;
   color: var(--white);
 }
 
+/* Voor de header */
 
 .hero {
   height: 100vh;
@@ -42,6 +42,8 @@ body {
   }
 }
 
+/* Dit is voor de h1 */
+
 .hero h1 {
   font-style: italic;
   font-size: 3rem;
@@ -64,6 +66,8 @@ body {
     blink-caret .75s step-end infinite;
 }
 
+/* Dit is voor de animatie van de typing */
+
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
@@ -73,6 +77,8 @@ body {
   from, to { border-color: transparent }
   50% { border-color: var(--purple) }
 }
+
+/* Dit is het gedeelte van de profile cards */
 
 .squad {
   padding: 50px 20px;
@@ -170,6 +176,8 @@ body {
   color: white;
 }
 
+/* Dit is de breakpoint voor het scherm dat gaat aanpassen wanneer het een ander formaat heeft */
+
 @media screen and (max-width: 780px) {
   .member {
     width: 90vw;
@@ -195,6 +203,7 @@ body {
   }
 }
 
+/* Dit is voor de locaties */
 .favorites {
   padding: 50px 20px;
   text-align: center;
