@@ -94,6 +94,7 @@ body {
   margin-top: 25px;
   width: 200px;
   height: 250px;
+  transition: all 1.2s ease;
 
   flex: 0 0 250px;           /* vaste breedte per kaart */
   scroll-snap-align: center; /* kaart centreert in slider */
@@ -102,6 +103,12 @@ body {
   border-radius: 12px;
   box-shadow: 4px 4px 6px var(--purple);
   text-align: center;
+}
+
+.member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(230, 0, 255, 0.992);
+  transition: 1.2s;
 }
 
 .squad-slider {
