@@ -10,16 +10,21 @@
   --grey: hsl(301, 100%, 35%);
   --dark-grey: hsl(0, 0%, 12%);
   --off-black: hsl(0, 0%, 8%);
-}
 
+  /* toegevoegd zodat tabs werken */
+  --accent: hsl(260, 100%, 65%);
+  --card: #1e1e1e;
+}
+html {
+        cursor: url("http://www.rw-designer.com/cursor-extern.php?id=170204"), auto;
+      }
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--off-black);
-  padding: 4rem 1rem;
   color: var(--white);
 }
 
-
+/* Hero */
 .hero {
   height: 100vh;
   padding: 0 1rem;
@@ -27,19 +32,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('') no-repeat center center/cover;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('') no-repeat center center/cover;
   color: white;
-  @media screen and (max-width: 1000px) {
-    .hero {
-      flex-direction: column;
-      height: auto;
-     padding: 2rem 1rem;
-    }
-    .hero h1, .hero-content h1 {
-      font-size: 2.2rem;
-      white-space: normal;
-    }
-  }
 }
 
 .hero h1 {
@@ -59,9 +53,7 @@ body {
   margin: 0 auto; 
   padding: 0 auto;
   letter-spacing: .10em;
-  animation: 
-    typing 2s steps(40, end),
-    blink-caret .75s step-end infinite;
+  animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
 }
 
 @keyframes typing {
@@ -74,6 +66,78 @@ body {
   50% { border-color: var(--purple) }
 }
 
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.tab {
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+  color: #e2e8f0;
+  transition: all 0.25s ease;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.tab[aria-selected="true"] {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+.panel.fade-in {
+  animation: fadeInPanel 0.35s;
+}
+
+@keyframes fadeInPanel {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Panels */
+.row {
+  width: 100%;
+  min-height: 400px;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.panel {
+  inset: 0;
+  padding: 20px;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.panel[data-active="true"] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Squad */
 .squad {
   padding: 50px 20px;
   text-align: center;
@@ -86,6 +150,7 @@ body {
   flex-wrap: wrap;
   margin-top: 20px;
 }
+
 .member {
   background: var(--off-black);
   padding: 20px;
@@ -95,13 +160,8 @@ body {
   width: 200px;
   height: 250px;
   transition: all 1.2s ease;
-
-  flex: 0 0 250px;           /* vaste breedte per kaart */
-  scroll-snap-align: center; /* kaart centreert in slider */
-  background: var(--off-black);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 4px 4px 6px var(--purple);
+  flex: 0 0 250px;
+  scroll-snap-align: center;
   text-align: center;
 }
 
@@ -113,8 +173,8 @@ body {
 
 .squad-slider {
   width: 100%;
-  overflow-x: auto;          /* horizontaal scrollen */
-  scroll-snap-type: x mandatory; /* "plakt" netjes per kaart */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   display: flex;
 }
 
@@ -126,21 +186,21 @@ body {
 }
 
 .squad-slider::-webkit-scrollbar {
-  height: 8px; /* hoogte van scrollbar */
+  height: 8px;
 }
 
 .squad-slider::-webkit-scrollbar-track {
-  background: var(--off-black); /* achtergrond */
+  background: var(--off-black);
   border-radius: 10px;
 }
 
 .squad-slider::-webkit-scrollbar-thumb {
-  background: var(--purple); /* schuifbalk */
+  background: var(--purple);
   border-radius: 10px;
 }
 
 .squad-slider::-webkit-scrollbar-thumb:hover {
-  background: hsl(301, 100%, 45%); /* iets lichter bij hover */
+  background: hsl(301, 100%, 45%);
 }
 
 .member img {
@@ -153,9 +213,11 @@ body {
   aspect-ratio: 1/1;
   object-fit: cover;
 }
+
 .member h3 {
   margin: 15px 0 10px;
 }
+
 .btn {
   display: inline-block;
   padding: 8px 20px;
@@ -170,6 +232,7 @@ body {
   color: white;
 }
 
+/* Responsiveness */
 @media screen and (max-width: 780px) {
   .member {
     width: 90vw;
@@ -195,6 +258,7 @@ body {
   }
 }
 
+/* Favorites */
 .favorites {
   padding: 50px 20px;
   text-align: center;
