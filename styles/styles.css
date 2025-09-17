@@ -5,11 +5,6 @@
 }
 
 :root {
-  --purple: hsl(301, 100%, 35%);
-  --white: hsl(0, 0%, 100%);
-  --grey: hsl(301, 100%, 35%);
-  --dark-grey: hsl(0, 0%, 12%);
-  --off-black: hsl(0, 0%, 8%);
 
   /* toegevoegd zodat tabs werken */
   --accent: hsl(260, 100%, 65%);
@@ -33,13 +28,14 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('') no-repeat center center/cover;
+  background: linear-gradient(#f4f9e9, #284b63), url('') no-repeat center center/cover;
   color: white;
 }
 
 /* Dit is voor de h1 */
 
 .hero h1 {
+  font-family: "Luckiest Guy";
   font-style: italic;
   font-size: 3rem;
 }
@@ -98,9 +94,9 @@ body {
 }
 
 .tab[aria-selected="true"] {
-  background: var(--accent);
-  color: white;
-  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+  background: #F4F9E9;
+  color: black;
+  box-shadow: 0 6px 16px #F4F9E9;
 }
 .panel.fade-in {
   animation: fadeInPanel 0.35s;
@@ -121,10 +117,9 @@ body {
 .row {
   width: 100%;
   min-height: 400px;
-  background: var(--card);
+  background:#153243;
   border-radius: 12px;
   padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
 }
 
@@ -159,7 +154,7 @@ body {
 }
 
 .member {
-  background: var(--off-black);
+  background: #8EA2A6;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 4px 4px 6px var(--purple);
@@ -174,7 +169,6 @@ body {
 
 .member:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(230, 0, 255, 0.992);
   transition: 1.2s;
 }
 
@@ -228,15 +222,18 @@ body {
 .btn {
   display: inline-block;
   padding: 8px 20px;
-  border: 2px solid purple;
+  background: #C1CEC8;
   border-radius: 25px;
   text-decoration: none;
   color: var(--grey);
   transition: all 0.3s;
 }
 .btn:hover {
-  background: #333;
+  background: #5B7785;
   color: white;
+}
+.main h2{
+  color: #fff;
 }
 
 /* Dit is de breakpoint voor het scherm dat gaat aanpassen wanneer het een ander formaat heeft */
@@ -282,7 +279,9 @@ body {
   flex-wrap: wrap;
   margin-top: 20px;
 }
-
+.locations p{
+  color: #fff;
+}
 .location {
   width: 200px;
 }
