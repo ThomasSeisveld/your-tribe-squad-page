@@ -9,7 +9,11 @@
   /* toegevoegd zodat tabs werken */
   --accent: hsl(260, 100%, 65%);
   --card: #1e1e1e;
+  --off-black: #153243;
+  --white: #f4f9e9;
+  --grey: #5f6566;
 }
+
 html {
         cursor: url("http://www.rw-designer.com/cursor-extern.php?id=170204"), auto;
       }
@@ -204,6 +208,12 @@ body {
   margin: 0 auto;
   scroll-snap-type: x mandatory;
 }
+
+.squad-slider {
+  scrollbar-color: var(--white) var(--off-black);
+  -ms-overflow-style: auto;
+}
+
 .squad-track .member {
   scroll-snap-align: start;
 }
@@ -223,7 +233,7 @@ body {
 }
 
 .squad-slider::-webkit-scrollbar-thumb:hover {
-  background: hsl(301, 100%, 45%);
+  background: hsl(0, 0%, 64%);
 }
 
 .member img {
