@@ -1,3 +1,11 @@
+.team-title {
+  color: #fff;
+  font-size: 2rem;
+  margin: 1rem;
+  text-align: right;
+  text-shadow: 0 2px 8px rgba(40,75,99,0.4);
+  letter-spacing: 0.05em;
+}
 * {
   margin: 0;
   padding: 0;
