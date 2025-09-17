@@ -21,10 +21,10 @@ html {
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--off-black);
+  padding: 4rem 1rem;
   color: var(--white);
 }
 
-/* Voor de header */
 
 .hero {
   height: 100vh;
@@ -73,6 +73,78 @@ body {
 
 /* Dit is het gedeelte van de profile cards */
 
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.tab {
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+  color: #e2e8f0;
+  transition: all 0.25s ease;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.tab[aria-selected="true"] {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+.panel.fade-in {
+  animation: fadeInPanel 0.35s;
+}
+
+@keyframes fadeInPanel {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Panels */
+.row {
+  width: 100%;
+  min-height: 400px;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.panel {
+  inset: 0;
+  padding: 20px;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.panel[data-active="true"] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Squad */
 .squad {
   padding: 50px 20px;
   text-align: center;
@@ -169,6 +241,7 @@ body {
 
 /* Dit is de breakpoint voor het scherm dat gaat aanpassen wanneer het een ander formaat heeft */
 
+/* Responsiveness */
 @media screen and (max-width: 780px) {
   .member {
     width: 90vw;
@@ -195,6 +268,7 @@ body {
 }
 
 /* Dit is voor de locaties */
+/* Favorites */
 .favorites {
   padding: 50px 20px;
   text-align: center;
