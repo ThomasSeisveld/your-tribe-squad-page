@@ -19,20 +19,19 @@ html {
         cursor: url("http://www.rw-designer.com/cursor-extern.php?id=170204"), auto;
       }
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Luckiest Guy';
+  letter-spacing: .20em;
   background-color: var(--off-black);
-  padding: 4rem 1rem;
   color: var(--white);
 }
 
+/* Voor de header */
 
 .hero {
-  height: 100vh;
+  height: 130vh;
   padding: 0 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('') no-repeat center center/cover;
   color: white;
 }
@@ -40,8 +39,8 @@ body {
 /* Dit is voor de h1 */
 
 .hero h1 {
-  font-style: italic;
-  font-size: 3rem;
+  font-family: 'Luckiest Guy';
+  font-size: 5rem;
 }
 
 .hero span {
@@ -49,27 +48,16 @@ body {
 }
 
 .hero-content h1 {
+  display: auto;
   overflow: hidden;
   max-width: fit-content;
-  border-right: .15em solid var(--purple);
   white-space: nowrap; 
-  margin: 0 auto; 
+  margin-top: 100px;
+  margin-left: -650px;
   padding: 0 auto;
   letter-spacing: .10em;
-  animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
 }
 
-/* Dit is voor de animatie van de typing */
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--purple) }
-}
 
 /* Dit is het gedeelte van de profile cards */
 
@@ -82,6 +70,8 @@ body {
 }
 
 .tab {
+  font-family: 'Luckiest Guy';
+  letter-spacing: 0.3em;
   padding: 10px 20px;
   border-radius: 999px;
   background: transparent;
@@ -265,7 +255,21 @@ body {
     margin: 10px auto 0 auto;
     text-align: center;
   }
-}
+
+  .hero {
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .hero h1, .hero-content h1 {
+    font-size: 2.2rem;
+    white-space: normal;
+    align-items: center;
+    margin-left: hidden;
+  }
+  }
 
 /* Dit is voor de locaties */
 /* Favorites */
